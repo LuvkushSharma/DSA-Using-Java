@@ -1,0 +1,114 @@
+
+---------------------- Quick Sort -------------------------
+
+ Given array : {7 , 5 , 3 , 1 , 9 , 4}
+
+ Take 4 first and then make changes in the array so that left part of the 4 have elements less 4
+ and right part of the 4 should be greater than 4. ------> If possible.
+ ---> If we have 14 inplace of 4 then we are unable to find right part of 14.
+ And left and right part may be sorted or may not be.
+
+
+ {1 , 3 , 4 , 5 , 7 , 9}
+          |
+
+ left part have elements that are less than 4 and right part have elements greater than 4.
+
+ Step-1 :  0   1   2   3   4   5  <---- index
+          {7 , 5 , 3 , 1 , 9 , 4}
+
+          pivotIndex = 0; // Initially assuming 4 at 0th index.
+
+          last_element = arr[5]
+
+          high = 5;
+
+          find position of 4 from 0 to 4 index
+
+          So, we will apply a loop from 7 to 9
+
+          for (int i = 0; i < high ; i++)
+              if (arr[i] <= last_element) {
+
+                 swap (i , pivotIndex);
+
+                 pivotIndex += 1;
+              }
+
+          7 is not less than last_element ----> i = 0
+          5 is also not less than last_element ----> i = 1
+          3 is less than last_element -----> i = 2
+
+          Swap 3 with 7
+
+          {3 , 5 , 7 , 1 , 9 , 4}
+
+          and then i = 3
+
+
+ Step-2 :   0   1   2   3   4   5  <---- index
+           {3 , 5 , 7 , 1 , 9 , 4}
+
+           pivotIndex = 1;
+
+           last_element = arr[5]
+
+           Now , i = 3 i.e at 1
+
+               if (arr[i] <= last_element) {
+
+                  swap (i , pivotIndex);
+
+                  pivotIndex += 1;
+               }
+
+           1 is less than last_element
+
+           Swap 1 with 5
+
+           {3 , 1 , 7 , 5 , 9 , 4}
+
+           i = 4
+
+
+ Step-3 :    0   1   2   3   4   5  <---- index
+            {3 , 1 , 7 , 5 , 9 , 4}
+
+            pivotIndex = 2;
+
+            last_element = arr[5]
+
+            Now , i = 4 i.e at 9
+
+                if (arr[i] <= last_element) {
+
+                   swap (i , pivotIndex);
+
+                   pivotIndex += 1;
+                }
+
+            9 is not less than equal to last_element
+
+            We go out of the loop now.
+
+            swap --> 7 and 4
+
+            {3 , 1 , 4 , 5 , 9 , 7}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
