@@ -1,0 +1,135 @@
+
+(Number of call stacks * Work done by each call stack)
+
+-------------------- Single Recursive Call ----------------
+
+Factorial TC via recursion :
+
+recursive relation : n*f(n-1)
+
+n call stacks bana hain and in each call stack work done is constant like multiplication and all.
+
+TC : O(n)
+
+
+----------------- Recursive Call in for loop ----------------
+
+for (int i = 1 ; i <= n ; i++)
+  return n* fn(n-1)
+
+TC : O(n^2)
+
+
+i.e. Ek Recursive Call ek for loop ke tarah kaam kar raha hain.
+
+------------------- Multiple Recursive Call i.e. 2 or More than 2 recursive Calls.  -------------------
+
+🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡🫡
+
+fibonacci :
+
+fibo(n-1) + fibo(n-2)
+
+Let n = 3
+
+                3
+             /     \
+            2       1
+         /    \
+        1      0
+
+jitne nodes utni TC but we are unable to count the circles.
+
+In worst case each node have 2 children i.e
+
+In the real Recursive tree itne recursive calls nhi lagyengye yaa fir lag bhi skate hain so, we are taking the worst case.
+Like, when n = 3 then full binary tree nhi ba raha but if we take its worst case then sirf 2 nodes hee hamne extra count kari hain.
+
+                               ---------
+                               |       | ------------------> 2^0
+                               ---------
+                            /              \
+                        ---------          ---------
+                        |       |          |       | -----------> 2^1
+                        ---------          ---------
+                     /           \       /           \
+                 --------- ---------  ---------      ---------
+                 |       | |       |  |       |      |       | -----------> 2^2
+                 --------- ---------  ---------      ---------
+
+                 .
+                 .
+                 .
+                 .
+                 ---------------------------------------------------------> 2^n
+
+
+          If height of the tree is n then no. of nodes in the tree at the nth level is 2^n
+
+          No. of recursive call : 2^0 + 2^1 + 2^2 + 2^3 + 2^4 + ....... + 2^n
+
+                                 Above series is GP sum
+
+                                 2 (2^N+1 - 1)            2^(N+2) - 1
+                                 -------------   ===>   -------------- ===> 2^2 X 2^N - 1
+                                     2-1                      1
+
+                                 So, ignore 2^2 as it is much smaller then 2^N
+
+                                 i.e. 2^N - 1 ===> 2^N
+
+          TC : 2^N
+
+
+          Similarly , agar 2 recursive call kii jagye 3 recursive calls hoote then
+
+          No. of recursive call : 3^0 + 3^1 + 3^2 + 3^3 + ....... + 3^N
+
+          TC : 3^N
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Checking TC of some Recursive Questions
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+PrintSubsequence TC:
+
+Two Recursive Calls :
+
+char ch  = ques.charAt(0); ------> O(1)
+                                           |
+PrintSubs (ques.substring(1) , ans);       |-------> O(2^N)
+PrintSubs (ques.substring(1) , ans + ch)   |
+
+TC : O(2^N)
+
+
+Dice Problem TC: includes 6 recursive calls.
+
+TC : O(6^N)
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Also , See the recurrence relation of Fibonacci , Factorial , Binary , Merge Sort , Quick Sort....
+
+Before this we will find the power of any number in O(logn)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
