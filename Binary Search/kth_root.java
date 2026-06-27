@@ -37,7 +37,7 @@ public class kth_root {
         int high = n;
         int ans = 0;
 
-        while(low <= high){
+        while(low <= high) {
 
             int mid = (low + high)/2;
 
@@ -46,7 +46,7 @@ public class kth_root {
                 ans = mid;
                 low  = mid + 1; // abb ans se badi value
 
-            } else{
+            } else {
 
                 high = mid - 1;
 
